@@ -29,7 +29,7 @@ public class JDBC01_Query01 {
         4- SQL querylerimizi yazıp, çalıştırabiliriz.
          */
 
-        ResultSet data=st.executeQuery("SELECT * FROM tedarik");
+        ResultSet data=st.executeQuery("SELECT * FROM meslek_lisesi");
 
        /*
        5-  SONUÇLARI GÖRMEK İÇİN Set içerisindeki elemanları while döngüsünde yazdırıyoruz.
@@ -38,7 +38,7 @@ public class JDBC01_Query01 {
 
 
         while(data.next()){
-            System.out.println(data.getInt(1)+" "+data.getString(2)+ " "+data.getString(3));
+            System.out.println(data.getString(1)+"  "+data.getString(2)+ "  "+data.getDouble(3)+ "  "+ data.getString(4)+ "  "+ data.getDate(5));
         }
         /*
         6- oluşturulan bağlantıları kapatalım... con.close();
