@@ -46,5 +46,7 @@ public class JDBC01_Query01 {
         con.close();
         st.close();
         data.close();
+
+
     }
 }

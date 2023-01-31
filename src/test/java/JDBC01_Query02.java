@@ -24,7 +24,7 @@ public class JDBC01_Query02 {
         iletisim_isim VARCHAR(20),
         CONSTRAINT firmalar_pk PRIMARY KEY (id, isim)
         );
-​
+
         INSERT INTO firmalar VALUES
         (1, 'ACB', 'Ali Can'),
         (2, 'RDB', 'Veli Gul'),
@@ -38,11 +38,11 @@ public class JDBC01_Query02 {
 
         String selectquery2 = "SELECT isim, iletisim_isim FROM firmalar WHERE id>1 ORDER BY isim DESC";
 
-        ResultSet data = st.executeQuery(selectquery);
+        ResultSet data2 = st.executeQuery(selectquery);
 
-        while (data.next()) {
-            System.out.println(data.getString("isim") + " " +
-                    data.getString("iletisim_isim"));
+        while (data2.next()) {
+            System.out.println(data2.getString("isim") + " " +
+                    data2.getString("iletisim_isim"));
         }
 
         System.out.println("=======================================ORNEK 2===================================================");
@@ -53,7 +53,7 @@ public class JDBC01_Query02 {
 
         String selectquery3= "Select id, isim from firmalar where iletisim_isim like '%li%' order by id";
 
-        ResultSet data2= st.executeQuery(selectquery3);
+        data2 = st.executeQuery(selectquery3);
 
         while (data2.next()) {
             System.out.println(data2.getInt("id") + " " +
@@ -69,6 +69,11 @@ public class JDBC01_Query02 {
             System.out.println(data2.getInt(2) + " " +
                     data2.getString(1));
         }
+        con.close();
+        st.close();
+        data2.close();
+
+
 
     }
 }
